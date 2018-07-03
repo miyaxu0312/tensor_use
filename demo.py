@@ -33,7 +33,7 @@ def main(args):
         # read image
         image = imread(image_path)
         [h, w, _] = image.shape
-        pos = prn.net_forward(image) # input image has been cropped to 256x256
+        pos = prn.net_forward(image/255.) # input image has been cropped to 256x256
         imsave(os.path.join(save_folder, name + '.jpg'), image)
 
 if __name__ == '__main__':
